@@ -1,0 +1,40 @@
+def count_words(text):
+    """
+    Function to count the number of words in the given text.
+    
+    Args:
+    text (str): The input text whose words are to be counted.
+    
+    Returns:
+    int: The number of words in the text.
+    """
+    try:
+        # Ensure the input is a string
+        if not isinstance(text, str):
+            raise TypeError("Input must be a string.")
+        
+        # Check for empty string
+        if text.strip() == "":
+            return 0
+        
+        # Split the text into words based on whitespace and count them
+        words = text.split()
+        return len(words)
+    
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return 0
+
+def main():
+    # Get input from the user
+    user_input = input("Enter text to count words: ")
+    
+    # Count words in the input text
+    word_count = count_words(user_input)
+    
+    # Print the result
+    print(f"Number of words: {word_count}")
+
+if __name__ == "__main__":
+    main()
+
